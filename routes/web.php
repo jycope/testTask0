@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ListsController;
+use App\Http\Controllers\ListTasksController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('lists', ListsController::class);
+
+Route::resource('lists.tasks', ListTasksController::class);
