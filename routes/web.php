@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ListsController;
 use App\Http\Controllers\ListTasksController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\ScheduleTaskController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +30,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('lists', ListsController::class);
+Route::resource('schedule', ScheduleController::class);
 
-Route::resource('lists.tasks', ListTasksController::class);
+Route::resource('schedule.tasks', ScheduleTaskController::class);
