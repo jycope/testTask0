@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{ Form::model($list, ['route' => 'lists.store', 'class' => 'd-flex justify-content-between flex-column gap-10 mt-4 w-25 m-auto', 'enctype' => 'multipart/form-data']) }}
+{{ Form::model($schedule, ['route' => 'schedule.store', 'class' => 'd-flex justify-content-between flex-column gap-10 mt-4 w-25 m-auto', 'enctype' => 'multipart/form-data']) }}
 <div class="mb-1">
     <label for="staticEmail" class="col-sm-2 col-form-label">Название</label>
     <div class="input-form">
