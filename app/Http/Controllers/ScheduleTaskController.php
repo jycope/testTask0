@@ -46,6 +46,7 @@ class ScheduleTaskController extends Controller
             'required' => 'nullable'
         ]);
         $task = $schedule->tasks()->make();
+
         $task->fill($data);
         $task->save();
 

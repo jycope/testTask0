@@ -41,9 +41,16 @@ class ScheduleController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required',
+            'photo' => 'required'
         ]);
         $schedule = new Schedule();
+
+        $image = $request->file('photo');
+        $photo = $image->path();
+        $schedule->photo = $photo;
+        $image->storeAs('public/uploads', $photo);
+
         $schedule->fill($data);
         $schedule->save();
         return redirect()
